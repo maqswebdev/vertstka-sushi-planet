@@ -1,0 +1,86 @@
+.header
+  position: relative
+  &-top
+    padding: 10px 0
+    position: relative
+    &::after
+      content: ""
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 1px
+      background: $black
+      opacity: 0.1
+    &__right
+      display: flex
+      align-items: center
+      & > div
+        margin-right: 40px
+        &:last-child
+          margin-right: 0
+      .working-time
+        margin-right: 43px
+
+// logotype
+.logotype
+  display: block
+  img
+    max-width: 180px
+    height: auto
+// working-time
+.working-time
+  position: relative
+  font-size: 14px
+  line-height: 21px
+  &__title
+    font-weight: 700
+// callphone
+.callphone
+  display: flex
+  align-items: center
+  a
+    display: inline-block
+    margin-left: 10px
+    font-weight: 700
+    font-size: 20px
+    color: $black
+    &:hover
+      text-decoration: none
+// switch-lang
+.switch-lang
+  position: relative
+  border: 1px solid $grey5
+  display: flex
+  align-items: center
+  border-radius: 20px
+  overflow: hidden
+  &__item
+    display: block
+    text-align: center
+    padding: 10px 7px 10px 14px
+    flex: 1
+    color: $grey3
+    font-size: 14px
+    font-weight: 500
+    line-height: 16px
+    &.active
+      color: $black
+    &:not(:first-child)
+      padding: 10px 14px 10px 7px
+    &:hover
+      text-decoration: none
+    &:hover:not(.active)
+      color: $grey3
+// login
+.login
+  &__link
+    display: inline-block
+    margin-left: 6px
+    color: $black
+    line-height: 18px
+    font-size: 15px
+    font-weight: 500
+    &:hover
+      text-decoration: none
+      color: $black
