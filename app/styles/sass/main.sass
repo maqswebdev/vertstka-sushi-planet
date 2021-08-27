@@ -1,2 +1,91 @@
 @import config
 @import "blocks/**/*"
+
+// overlay-nav
+.overlay-nav
+  position: fixed
+  top: -100%
+  left: 0
+  width: 100%
+  height: 100vh
+  z-index: 101
+  background: $white
+  overflow-y: scroll
+  padding-top: 131px
+  padding-bottom: 150px
+  transition: $trs
+  opacity: 0
+  visibility: hidden
+  display: none
+  +media-breakpoint-down(md)
+    display: block
+  +media-breakpoint-down(sm)
+    padding-top: 0
+  &.active
+    top: 62px
+    opacity: 1
+    visibility: visible
+  &-wrapper
+    position: relative
+    display: flex
+    align-items: flex-start
+    +media-breakpoint-down(sm)
+      flex-direction: column
+    .callphone
+      display: none
+      margin: 20px 0 15px
+      +media-breakpoint-down(sm)
+        display: flex
+      a
+        font-size: 20px
+        line-height: 24px
+    .working-time
+      display: none
+      margin-bottom: 20px
+      font-size: 14px
+      line-height: 21px
+      +media-breakpoint-down(sm)
+        display: block
+      &__title
+        font-weight: 500
+  .nav
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+    max-width: 490px
+    +media-breakpoint-down(sm)
+      padding: 25px 0
+      border-top: 1px solid $grey4
+      border-bottom: 1px solid $grey4
+    a
+      flex: 0 0 50%
+      display: inline-block
+      font-weight: 500
+      font-size: 24px
+      line-height: 36px
+      color: $black
+      margin-bottom: 25px
+      +media-breakpoint-down(sm)
+        flex: 0 0 100%
+        font-size: 20px
+        line-height: 30px
+        margin-bottom: 20px
+      &:last-child
+        margin-bottom: 0
+      &:hover
+        text-decoration: none
+      &.hlite
+        color: $red
+// switch-lang-links
+.switch-lang-links
+  font-size: 20px
+  line-height: 36px
+  +media-breakpoint-down(sm)
+    margin-top: 25px
+    line-height: 24px
+  a
+    display: inline-block
+    color: $grey4
+    font-weight: 500
+    &.active
+      color: $black

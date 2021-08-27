@@ -1,5 +1,6 @@
 .header
   position: relative
+  background: $white
   &-top
     padding: 10px 0
     position: relative
@@ -17,10 +18,26 @@
       align-items: center
       & > div
         margin-right: 40px
+        +media-breakpoint-down(lg)
+          margin-right: 30px
         &:last-child
           margin-right: 0
       .working-time
         margin-right: 43px
+        +media-breakpoint-down(lg)
+          margin-right: 30px
+        +media-breakpoint-down(sm)
+          display: none
+      .callphone
+        +media-breakpoint-down(sm)
+          display: none
+      .switch-lang
+        +media-breakpoint-down(md)
+          display: none
+      .login
+        margin-right: 0
+        +media-breakpoint-down(md)
+          display: none
 
 // logotype
 .logotype
@@ -28,11 +45,18 @@
   img
     max-width: 180px
     height: auto
+    +media-breakpoint-down(lg)
+      max-width: 140px
+    +media-breakpoint-down(md)
+      max-width: 120px
 // working-time
 .working-time
   position: relative
   font-size: 14px
   line-height: 21px
+  +media-breakpoint-down(lg)
+    font-size: 12px
+    line-height: 18px
   &__title
     font-weight: 700
 // callphone
@@ -45,6 +69,9 @@
     font-weight: 700
     font-size: 20px
     color: $black
+    +media-breakpoint-down(lg)
+      font-size: 18px
+      margin-left: 8px
     &:hover
       text-decoration: none
 // switch-lang
@@ -64,6 +91,9 @@
     font-size: 14px
     font-weight: 500
     line-height: 16px
+    +media-breakpoint-down(lg)
+      font-size: 12px
+      line-height: 14px
     &.active
       color: $black
     &:not(:first-child)
@@ -81,6 +111,34 @@
     line-height: 18px
     font-size: 15px
     font-weight: 500
+    +media-breakpoint-down(lg)
+      font-size: 13px
     &:hover
       text-decoration: none
       color: $black
+// hamburger
+.hamburger
+  padding: 7.5px 3.75px
+  align-items: center
+  display: none
+  +media-breakpoint-down(md)
+    display: flex
+  &-box
+    width: 30px
+  &-inner
+    width: 30px
+    height: 3px
+    &::after
+      width: 30px
+      bottom: -8px
+      height: 3px
+    &::before
+      width: 30px
+      top: -8px
+      height: 3px
+  &.is-active
+    .hamburger-inner
+      &::before
+        top: -10px
+      &::after
+        bottom: -10px
