@@ -1,4 +1,6 @@
-//import $ from 'jquery'; window.jQuery = $; window.$ = $ // import module example (npm i -D jquery)
+import $ from "jquery";
+window.jQuery = $;
+window.$ = $; // import module example (npm i -D jquery)
 
 document.addEventListener("DOMContentLoaded", () => {
   // Hamburger Menu
@@ -10,4 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
       $overlayMnu.classList.toggle("active");
     });
   }
+
+  $(".main-nav__item").on("mouseenter", function () {
+    $(".main-nav__item")
+      .removeClass("active")
+      .eq($(this).index())
+      .addClass("active");
+  });
+  $(".sub-menu").on("mouseleave", function () {
+    $(".main-nav__item").removeClass("active");
+  });
 });
