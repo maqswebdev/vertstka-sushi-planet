@@ -2,6 +2,7 @@ import $ from "jquery";
 window.jQuery = $;
 window.$ = $; // import module example (npm i -D jquery)
 import Headhesive from "headhesive";
+import Swiper from "swiper";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Hamburger Menu
@@ -27,8 +28,40 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // SWIPER SLIDERS INIT
-
+  const $mobileMenu = document.querySelector(".mobile-menu");
+  function initMobileMenu() {
+    const mobileMenuSlider = new Swiper(".mobile-menu", {
+      slidesPerView: "auto",
+      spaceBetween: window.innerWidth <= 767 ? 8 : 10,
+      centeredSlides: true,
+      loop: true,
+    });
+    const $mobileMenuWrapper = document.querySelector(".mobile-menu__wrapper");
+    if ($mobileMenuWrapper) {
+      setTimeout(() => {
+        $mobileMenuWrapper.style.transform = "translate3d(0, 0, 0)";
+      }, 500);
+    }
+  }
   // END SWIPER SLIDERS INIT
+
+  /** START FUNCTIONS ON TABLET AND MOBILE VERSION */
+  if (window.innerWidth <= 991) {
+    initMobileMenu();
+  }
+  window.addEventListener(
+    "resize",
+    function () {
+      if (
+        !$mobileMenu.classList.contains("swiper-container-initialized") &&
+        window.innerWidth <= 991
+      ) {
+        console.log("init");
+        initMobileMenu();
+      }
+    },
+    false
+  );
 
   /* JQUERY FUNCTIONS !!!!!!!!! */
 

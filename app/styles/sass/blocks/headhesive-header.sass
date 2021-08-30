@@ -11,6 +11,7 @@
     .header-top
       display: none
     .header-bottom
+      border-bottom: 1px solid rgba(0,0,0,.1)
       +media-breakpoint-down(md)
         display: block
         padding: 10px 0
@@ -19,71 +20,15 @@
           display: none
       .main-nav
         +media-breakpoint-down(md)
-          position: relative
-          overflow: auto
-          max-width: 770px
-          padding-right: 200px
-        +media-breakpoint-down(sm)
-          max-width: 540px
-        &::-webkit-scrollbar
-          width: 3px
-          height: 0px
-        &::-webkit-scrollbar-track
-          background: transparent
-        &::-webkit-scrollbar-thumb
-          background: $grey3
-        &__item
-          &.grey
-            +media-breakpoint-down(md)
-              display: none
-          +media-breakpoint-down(md)
-            margin: 0
-        &__link
-          +media-breakpoint-down(md)
-            display: none
+          display: none
       .logotype-icon
         +media-breakpoint-down(md)
-          margin-right: 15px
+          margin-right: 10px
         +media-breakpoint-down(sm)
           margin-right: 9px
-      .sub-menu
+      .mobile-menu
         +media-breakpoint-down(md)
-          position: relative
-          opacity: 1
-          visibility: visible
-          top: unset
-          left: unset
-          background: unset
-          box-shadow: none
-        &__link
-          +media-breakpoint-down(md)
-            white-space: nowrap
-            font-size: 15px
-            padding: 6px 18px
-            background: rgba(238, 238, 238, 0.7)
-            border-radius: 20px
-            color: $grey
-          +media-breakpoint-down(sm)
-            font-size: 14px
-          &::after
-            +media-breakpoint-down(md)
-              display: none
-          &.active
-            +media-breakpoint-down(md)
-              background: rgba(226, 6, 19, 0.08)
-              color: $red
-        &__item
-          +media-breakpoint-down(md)
-            margin: 0 5px
-          +media-breakpoint-down(sm)
-            margin: 0 4px
-          &:first-child
-            +media-breakpoint-down(md)
-              margin-left: 5px
-        .container
-          +media-breakpoint-down(md)
-            padding: 0
-            max-width: 100%
+          display: block
   &.headhesive--stick
     transform: translateY(0)
     .header-bottom

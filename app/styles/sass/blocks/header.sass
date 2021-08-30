@@ -286,3 +286,33 @@
     +media-breakpoint-down(lg)
       font-size: 13px
       line-height: 18px
+
+// mobile-menu
+.mobile-menu
+  position: relative
+  display: none
+  overflow: hidden
+  &__wrapper
+    position: relative
+    font-size: 0
+    display: flex
+    align-items: center
+  &__item
+    display: inline-block
+    position: relative
+    background: rgba(238, 238, 238, 0.7)
+    border-radius: 20px
+    padding: 6px 18px
+    color: $grey
+    font-size: 15px
+    line-height: 21px
+    text-align: center
+    white-space: nowrap
+    +media-breakpoint-down(sm)
+      font-size: 14px
+    &:hover
+      text-decoration: none
+      color: $grey
+    &.active
+      background: rgba(226, 6, 19, 0.08)
+      color: $red
