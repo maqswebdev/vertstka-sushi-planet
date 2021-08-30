@@ -19,14 +19,17 @@
           display: none
       .main-nav
         +media-breakpoint-down(md)
-          overflow-x: scroll
-          max-width: 900px
-          padding-right: 400px
+          position: relative
+          overflow: auto
+          max-width: 770px
+          padding-right: 200px
+        +media-breakpoint-down(sm)
+          max-width: 540px
         &::-webkit-scrollbar
           width: 3px
-          height: 2px
+          height: 0px
         &::-webkit-scrollbar-track
-          background: $red
+          background: transparent
         &::-webkit-scrollbar-thumb
           background: $grey3
         &__item

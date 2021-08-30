@@ -26,6 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
     classes: {},
   });
 
+  // SWIPER SLIDERS INIT
+
+  // END SWIPER SLIDERS INIT
+
   /* JQUERY FUNCTIONS !!!!!!!!! */
 
   const $currentHeader = $(".header");
