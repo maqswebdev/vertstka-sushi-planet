@@ -21,8 +21,15 @@
     display: block
   +media-breakpoint-down(sm)
     padding-top: 0
+  &::-webkit-scrollbar
+    width: 4px
+  &::-webkit-scrollbar-track
+    background: $grey5
+  &::-webkit-scrollbar-thumb
+    background: $grey3
+
   &.active
-    top: 62px
+    top: 61px
     opacity: 1
     visibility: visible
   &-wrapper
@@ -89,3 +96,10 @@
     font-weight: 500
     &.active
       color: $black
+
+// section
+.section
+  position: relative
+  height: 100vh
+  width: 100%
+  border-bottom: 1px solid $red

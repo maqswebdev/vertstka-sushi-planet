@@ -1,0 +1,94 @@
+.header
+  &.headhesive
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: auto
+    z-index: 999
+    transform: translateY(-100%)
+    transition: $trs
+    .header-top
+      display: none
+    .header-bottom
+      +media-breakpoint-down(md)
+        display: block
+        padding: 10px 0
+      .cart
+        +media-breakpoint-down(md)
+          display: none
+      .main-nav
+        +media-breakpoint-down(md)
+          overflow-x: scroll
+          max-width: 900px
+          padding-right: 400px
+        &::-webkit-scrollbar
+          width: 3px
+          height: 2px
+        &::-webkit-scrollbar-track
+          background: $red
+        &::-webkit-scrollbar-thumb
+          background: $grey3
+        &__item
+          &.grey
+            +media-breakpoint-down(md)
+              display: none
+          +media-breakpoint-down(md)
+            margin: 0
+        &__link
+          +media-breakpoint-down(md)
+            display: none
+      .logotype-icon
+        +media-breakpoint-down(md)
+          margin-right: 15px
+        +media-breakpoint-down(sm)
+          margin-right: 9px
+      .sub-menu
+        +media-breakpoint-down(md)
+          position: relative
+          opacity: 1
+          visibility: visible
+          top: unset
+          left: unset
+          background: unset
+          box-shadow: none
+        &__link
+          +media-breakpoint-down(md)
+            white-space: nowrap
+            font-size: 15px
+            padding: 6px 18px
+            background: rgba(238, 238, 238, 0.7)
+            border-radius: 20px
+            color: $grey
+          +media-breakpoint-down(sm)
+            font-size: 14px
+          &::after
+            +media-breakpoint-down(md)
+              display: none
+          &.active
+            +media-breakpoint-down(md)
+              background: rgba(226, 6, 19, 0.08)
+              color: $red
+        &__item
+          +media-breakpoint-down(md)
+            margin: 0 5px
+          +media-breakpoint-down(sm)
+            margin: 0 4px
+          &:first-child
+            +media-breakpoint-down(md)
+              margin-left: 5px
+        .container
+          +media-breakpoint-down(md)
+            padding: 0
+            max-width: 100%
+  &.headhesive--stick
+    transform: translateY(0)
+    .header-bottom
+      .logotype-icon
+        opacity: 1
+        visibility: visible
+        display: block
+  &.headhesive--unstick
+    .main-nav__item.active .sub-menu
+      opacity: 0
+      visibility: hidden
