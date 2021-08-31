@@ -1,8 +1,11 @@
-import $ from "jquery";
+/*import $ from "jquery";
 window.jQuery = $;
-window.$ = $; // import module example (npm i -D jquery)
+window.$ = $; // import module example (npm i -D jquery)*/
 import Headhesive from "headhesive";
 import Swiper from "swiper";
+import { scrollspy } from "bootstrap";
+import Popper from "popper.js";
+import mPageScroll2id from "page-scroll-to-id";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Hamburger Menu
@@ -40,13 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if ($mobileMenuWrapper) {
       setTimeout(() => {
         $mobileMenuWrapper.style.transform = "translate3d(0, 0, 0)";
-      }, 500);
+        $mobileMenuWrapper.style["-webkit-transform"] = "translate3d(0, 0, 0)";
+      }, 2000);
     }
   }
   // END SWIPER SLIDERS INIT
 
   /** START FUNCTIONS ON TABLET AND MOBILE VERSION */
-  if (window.innerWidth <= 991) {
+  /*if (window.innerWidth <= 991) {
     initMobileMenu();
   }
   window.addEventListener(
@@ -61,9 +65,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     },
     false
-  );
+  );*/
 
   /* JQUERY FUNCTIONS !!!!!!!!! */
+
+  /** ПЛАВНЫЙ СКРОЛЛ */
+  $("a.nav-link").mPageScroll2id();
+  /** END ПЛАВНЫЙ СКРОЛЛ */
 
   const $currentHeader = $(".header");
   $(".main-nav__item").on("mouseenter", function () {
@@ -72,7 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .removeClass("active")
         .eq($(this).index())
         .addClass("active");
+      $(this).find(".main-nav__link").removeClass("active");
     } else {
+      console.log("this");
       $(".header .main-nav__item")
         .not(".header.headhesive .main-nav__item")
         .removeClass("active")

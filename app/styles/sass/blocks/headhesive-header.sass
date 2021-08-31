@@ -26,9 +26,6 @@
           margin-right: 10px
         +media-breakpoint-down(sm)
           margin-right: 9px
-      .mobile-menu
-        +media-breakpoint-down(md)
-          display: block
   &.headhesive--stick
     transform: translateY(0)
     .header-bottom
@@ -36,6 +33,15 @@
         opacity: 1
         visibility: visible
         display: block
+      .mobile-menu
+        +media-breakpoint-down(md)
+          display: flex
+          position: absolute
+          left: 75px
+          width: 100%
+      .container
+        +media-breakpoint-down(md)
+          position: relative
   &.headhesive--unstick
     .main-nav__item.active .sub-menu
       opacity: 0

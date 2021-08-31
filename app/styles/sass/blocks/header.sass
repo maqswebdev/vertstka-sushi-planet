@@ -177,15 +177,15 @@
       margin-left: 0
     &:last-child
       margin-right: 0
+    &.grey
+      .main-nav__link
+        color: $grey3
     &.active
       .main-nav__link
         color: $red
       .sub-menu
         opacity: 1
         visibility: visible
-    &.grey
-      .main-nav__link
-        color: $grey3
   &__link
     display: inline-block
     padding: 20px 0
@@ -198,6 +198,11 @@
     &:hover
       color: $red
       text-decoration: none
+    &.active
+      color: $red
+      & + .sub-menu
+        opacity: 1
+        visibility: visible
 
 // sub-menu
 .sub-menu
@@ -289,9 +294,10 @@
 
 // mobile-menu
 .mobile-menu
-  position: relative
   display: none
-  overflow: hidden
+  overflow: auto
+  white-space: nowrap
+  padding-right: calc(100vw - 700px)!important
   &__wrapper
     position: relative
     font-size: 0
@@ -307,7 +313,7 @@
     font-size: 15px
     line-height: 21px
     text-align: center
-    white-space: nowrap
+    margin: 0 5px 0 0
     +media-breakpoint-down(sm)
       font-size: 14px
     &:hover
