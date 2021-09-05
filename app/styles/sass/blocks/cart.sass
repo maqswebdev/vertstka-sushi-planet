@@ -1,0 +1,320 @@
+// cart
+.cart
+  position: relative
+  display: flex
+  align-items: center
+  color: $black
+  &:hover
+    color: $black
+    text-decoration: none
+  &-block
+    display: flex
+    align-items: center
+  &__icon
+    width: 42px
+    height: 42px
+    background: $green
+    border-radius: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-right: 8px
+    +media-breakpoint-down(lg)
+      width: 36px
+      height: 36px
+  &__count
+    font-size: 12px
+    display: block
+    line-height: 18px
+    +media-breakpoint-down(lg)
+      line-height: 16px
+  &__price
+    display: block
+    font-size: 15px
+    line-height: 22px
+    font-weight: 700
+    +media-breakpoint-down(lg)
+      font-size: 13px
+      line-height: 18px
+  // cart content
+  &-content
+    position: relative
+    max-width: 1040px
+    margin: 0 auto
+    padding-bottom: 90px
+    +media-breakpoint-down(md)
+      padding-bottom: 70px
+    +media-breakpoint-down(sm)
+      padding-bottom: 106px
+    .alert
+      margin-top: 15px
+      +media-breakpoint-down(lg)
+        margin-bottom: 20px
+      +media-breakpoint-down(sm)
+        margin-bottom: 15px
+    &.cart-empty
+      padding-top: 40px
+      text-align: center
+      +media-breakpoint-down(md)
+        padding-top: 100px
+      .title
+        font-weight: 700
+        margin: 0
+        +media-breakpoint-down(md)
+          font-size: 24px
+          line-height: 28px
+      .message
+        line-height: 24px
+        margin: 20px 0 40px
+        +media-breakpoint-down(md)
+          font-size: 14px
+          line-height: 21px
+          margin: 15px 0 30px
+        +media-breakpoint-down(sm)
+          margin: 10px 0 25px
+      .btn
+        max-width: 178px
+  &-items
+    padding-bottom: 50px
+    margin-top: 30px
+    +media-breakpoint-down(md)
+      padding-bottom: 40px
+      margin-top: 20px
+    +media-breakpoint-down(sm)
+      padding-bottom: 0
+      margin-top: 15px
+  // cart item
+  &-item
+    position: relative
+    background: $white
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.06)
+    border-radius: 15px
+    padding: 5px 47px 5px 30px
+    display: flex
+    align-items: center
+    margin-bottom: 15px
+    +media-breakpoint-down(md)
+      padding: 5px 20px 5px 10px
+      margin-bottom: 10px
+      border-radius: 10px
+    +media-breakpoint-down(sm)
+      flex-wrap: wrap
+      padding: 5px 10px 14px 10px
+      margin-bottom: 15px
+    &:last-child
+      margin-bottom: 0
+    &__left
+      display: flex
+      align-items: center
+      flex: 0 0 71.5%
+      +media-breakpoint-down(lg)
+        flex: 0 0 69%
+      +media-breakpoint-down(md)
+        flex: 0 0 60%
+      +media-breakpoint-down(sm)
+        flex: 0 0 100%
+    &__right
+      display: flex
+      align-items: center
+      +media-breakpoint-down(sm)
+        justify-content: space-between
+        width: 100%
+        padding: 14px 10px 0
+        border-top: 1px solid $grey5
+    &__img
+      flex: 0 0 156px
+      max-width: 156px
+      display: flex
+      align-items: center
+      justify-content: center
+      margin-right: 45px
+      +media-breakpoint-down(lg)
+        flex: 0 0 120px
+        max-width: 120px
+        margin-right: 15px
+      +media-breakpoint-down(sm)
+        margin-right: 20px
+      img
+        max-width: 100%
+        height: auto
+    &__properties
+      width: 100%
+      padding-right: 15px
+      .title
+        margin-bottom: 5px
+        font-weight: 700
+        a
+          color: $black
+          &:hover
+            text-decoration: none
+      ul
+        margin: 0
+        padding: 0
+        list-style: none
+        li
+          font-size: 14px
+          line-height: 17px
+    // cart items counter
+    &__counter
+      display: flex
+      align-items: center
+      border: 1px solid $grey3
+      border-radius: 30px
+      +media-breakpoint-down(sm)
+        order: 2
+        background: $grey5
+        border-color: $grey5
+      .counter-btn
+        width: 43px
+        height: 44px
+        border: none
+        background: transparent
+        display: flex
+        align-items: center
+        justify-content: center
+        +media-breakpoint-down(sm)
+          height: 38px
+        +media-breakpoint-down(xs)
+          width: 40px
+        svg
+          +media-breakpoint-down(sm)
+            fill: $grey
+      .counter-value
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 43px
+        height: 44px
+        +media-breakpoint-down(sm)
+          height: 38px
+        +media-breakpoint-down(xs)
+          width: 40px
+    // cart price
+    &__price
+      display: flex
+      flex-direction: column
+      margin: 0 20px 0 35px
+      flex: 0 0 70px
+      +media-breakpoint-down(md)
+        margin: 0 20px 0 30px
+      +media-breakpoint-down(sm)
+        margin: 0
+        flex: 0 0 80px
+      span
+        display: inline-block
+        font-size: 16px
+        color: $black
+        line-height: 19px
+        font-weight: 700
+        &.old-price
+          font-weight: 500
+          font-size: 12px
+          color: $grey2
+          text-decoration: line-through
+        &.current-price
+          &.danger
+            color: $red
+    // cart remove button
+    &__remove
+      position: relative
+      border: none
+      background: transparent
+      padding: 0
+      +media-breakpoint-down(sm)
+        order: 3
+        flex: 0 0 26px
+  // cart footer
+  &-footer
+    position: relative
+    padding-top: 50px
+    padding-bottom: 50px
+    border-top: 1px solid #e0e0e0
+    display: flex
+    justify-content: space-between
+    +media-breakpoint-down(md)
+      padding-top: 30px
+      padding-bottom: 30px
+    +media-breakpoint-down(sm)
+      position: fixed
+      bottom: 0
+      left: 0
+      width: 100%
+      height: auto
+      background: $white
+      border-top: none
+      padding: 14px 15px
+    .back-btn
+      +media-breakpoint-down(sm)
+        display: none
+    .checkout
+      +media-breakpoint-down(sm)
+        max-width: 190px
+    &__left
+    &__right
+      display: flex
+      align-items: center
+      +media-breakpoint-down(sm)
+        width: 100%
+        max-width: 540px
+        margin: 0 auto
+        padding: 0 15px
+        justify-content: space-between
+      +media-breakpoint-down(xs)
+        padding: 0
+  &-header
+    .cart-progress
+      margin-right: 40px
+      +media-breakpoint-down(lg)
+        margin-right: 90px
+      +media-breakpoint-down(md)
+        display: none
+    .back-btn
+      margin-left: 7px
+      +media-breakpoint-down(lg)
+        padding: 12px 35px 12px 13px
+        display: flex
+      +media-breakpoint-down(md)
+        display: none
+      svg
+        +media-breakpoint-down(lg)
+          margin-right: 10px
+    .sm-device-btn.back
+      position: absolute
+    .header-top
+      .logotype
+        margin-left: 60px
+
+// popup cart
+.popup-cart
+  display: none
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  height: auto
+  background: $white
+  box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.12)
+  padding: 25px
+  max-width: 360px
+  border-radius: 20px
+
+.total-price
+  font-size: 16px
+  font-weight: 500
+  display: flex
+  align-items: flex-end
+  height: 36px
+  margin-right: 40px
+  +media-breakpoint-down(md)
+    margin-right: 30px
+  +media-breakpoint-down(sm)
+    margin-right: 15px
+  span
+    display: block
+    font-weight: 700
+    font-size: 24px
+    margin-left: 5px
+    line-height: 32px
+    +media-breakpoint-down(sm)
+      font-size: 18px
+      line-height: 28px

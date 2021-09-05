@@ -1,0 +1,65 @@
+.cart-progress
+  position: relative
+  &-list
+    display: flex
+    align-items: center
+  &-item
+    display: flex
+    flex-direction: column
+    align-items: center
+    position: relative
+    margin-right: 10px
+    padding-right: 130px
+    height: 56px
+    +media-breakpoint-down(lg)
+      padding-right: 90px
+      height: 54px
+    &:first-child
+      .cart-progress-item__num
+        &::after
+          display: none
+    &.active
+      .cart-progress-item__num
+        color: $white
+        background: $green
+        border-color: $green
+      .cart-progress-item__label
+        color: $black
+    &__num
+      position: relative
+      width: 34px
+      height: 34px
+      line-height: 34px
+      text-align: center
+      color: $grey3
+      font-size: 14px
+      border: 1px solid $grey3
+      border-radius: 50%
+      margin-bottom: 5px
+      +media-breakpoint-down(lg)
+        width: 30px
+        height: 30px
+        line-height: 30px
+      &::after
+        content: ""
+        position: absolute
+        top: 50%
+        right: 100%
+        transform: translate(-10px,-50%)
+        width: 120px
+        height: 1px
+        background: $grey3
+        +media-breakpoint-down(lg)
+          width: 80px
+    &__label
+      position: absolute
+      bottom: 0
+      left: 10%
+      transform: translateX(-50%)
+      font-size: 14px
+      line-height: 17px
+      color: $grey3
+      +media-breakpoint-down(lg)
+        font-size: 12px
+        line-height: 24px
+        left: 12%

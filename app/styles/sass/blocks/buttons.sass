@@ -1,0 +1,36 @@
+.btn
+  position: relative
+  border-radius: 30px
+  width: 100%
+  border: none
+  font-size: 16px
+  line-height: 24px
+  font-weight: 500
+  transition: $trs
+  padding: 13px 0
+  +media-breakpoint-down(sm)
+    font-size: 14px
+    line-height: 21px
+  &.green-light
+    background: rgba(0,189,0,.1)
+    border-radius: 40px
+    color: $green
+    padding: 11px 0 12px
+    &.visited
+      background: $white
+      color: $green
+      border: 1px solid #00BD00
+    &:hover
+      background: $green
+      color: $white
+  &.checkout
+    padding: 13px 53px !important
+  &.green
+    background: $green
+    color: $white
+    padding: 13px 0
+    &:hover
+      background: #00A300
+  &.grey
+    background: $grey5
+    color: rgba($black, .6)

@@ -256,48 +256,16 @@
       transform: scale(0)
       transition: $trs
 
-// cart
-.cart
-  position: relative
-  display: flex
-  align-items: center
-  color: $black
-  &:hover
-    color: $black
-    text-decoration: none
-  &__icon
-    width: 42px
-    height: 42px
-    background: $green
-    border-radius: 50%
-    display: flex
-    justify-content: center
-    align-items: center
-    margin-right: 8px
-    +media-breakpoint-down(lg)
-      width: 36px
-      height: 36px
-  &__count
-    font-size: 12px
-    display: block
-    line-height: 18px
-    +media-breakpoint-down(lg)
-      line-height: 16px
-  &__price
-    display: block
-    font-size: 15px
-    line-height: 22px
-    font-weight: 700
-    +media-breakpoint-down(lg)
-      font-size: 13px
-      line-height: 18px
-
 // mobile-menu
 .mobile-menu
   display: none
   overflow: auto
   white-space: nowrap
-  padding-right: calc(100vw - 700px)!important
+  padding-right: calc(100% - 500px)!important
+  +media-breakpoint-down(sm)
+    padding-right: calc(100% - 300px)!important
+  +media-breakpoint-down(xs)
+    padding-right: calc(100% - 100px)!important
   &__wrapper
     position: relative
     font-size: 0
@@ -322,3 +290,20 @@
     &.active
       background: rgba(226, 6, 19, 0.08)
       color: $red
+
+// .sm-device-btn
+.sm-device-btn
+  display: none
+  width: 45px
+  height: 60px
+  border: none
+  background: transparent
+  border-right: 1px solid $grey4
+  text-align: left
+  +media-breakpoint-down(md)
+    display: block
+  svg
+    position: relative
+    left: -10px
+    +media-breakpoint-down(xs)
+      left: -5px
