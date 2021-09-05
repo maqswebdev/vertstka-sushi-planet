@@ -1,0 +1,220 @@
+.footer
+  position: relative
+  background: $black
+  &-title.title
+    color: $grey4
+    font-weight: 500
+    margin-bottom: 25px
+    +media-breakpoint-down(sm)
+      margin-bottom: 15px
+  &-top
+    padding: 45px 0
+    border-bottom: 1px solid $grey
+    +media-breakpoint-down(lg)
+      padding: 40px 0
+    +media-breakpoint-down(md)
+      padding: 40px 0 31px
+    +media-breakpoint-down(sm)
+      padding: 30px 0
+  &-center
+    padding: 60px 0 25px
+    border-bottom: 1px solid $grey
+    +media-breakpoint-down(lg)
+      padding: 40px 0
+    +media-breakpoint-down(sm)
+      padding: 30px 0
+  &-bottom
+    padding: 20px 0
+    display: flex
+    justify-content: space-between
+    +media-breakpoint-down(sm)
+      flex-direction: column
+      padding: 30px 0 20px
+    .copyright
+      display: flex
+      +media-breakpoint-down(sm)
+        flex-direction: column-reverse
+      &__text
+        margin-right: 28px
+        +media-breakpoint-down(lg)
+          margin-right: 10px
+        +media-breakpoint-down(sm)
+          margin-top: 5px
+    .footer-list
+      display: flex
+      +media-breakpoint-down(sm)
+        flex-direction: column
+      li
+        margin: 0 20px
+        flex: unset
+        +media-breakpoint-down(lg)
+          margin: 0 10px
+        +media-breakpoint-down(sm)
+          margin: 0 0 15px 0
+        a
+          +media-breakpoint-down(lg)
+            font-size: 14px
+  &-nav
+    flex: 0 0 34%
+    +media-breakpoint-down(lg)
+      flex: 0 0 30%
+    ul
+      display: flex
+      flex-wrap: wrap
+  &-contacts
+    flex: 0 0 34.7%
+    +media-breakpoint-down(lg)
+      flex: 0 0 40%
+    +media-breakpoint-down(sm)
+      flex: 0 0 100%
+      margin-top: 15px
+  &-social
+    flex: 1
+    +media-breakpoint-down(sm)
+      margin-top: 15px
+    .title
+      font-size: 18px
+      +media-breakpoint-down(sm)
+        font-size: 16px
+  &-list
+    margin: 0
+    padding: 0
+    list-style: none
+    li
+      flex: 0 0 35%
+      margin-bottom: 20px
+      line-height: 19px
+      color: $grey2
+      +media-breakpoint-down(lg)
+        line-height: 18px
+        margin-bottom: 15px
+        flex: 0 0 45%
+      +media-breakpoint-down(sm)
+        flex: 0 0 100%
+        line-height: 19px
+      a
+        display: inline-block
+        font-size: 16px
+        color: $grey2
+        +media-breakpoint-down(lg)
+          font-size: 15px
+        +media-breakpoint-down(sm)
+          font-size: 16px
+        &:hover
+          text-decoration: none
+  .payments
+    margin-top: 24px
+    +media-breakpoint-down(lg)
+      margin-top: 15px
+    +media-breakpoint-down(sm)
+      margin-top: 30px
+
+// partners
+.partners
+  position: relative
+  .title
+    margin-bottom: 20px
+    +media-breakpoint-down(lg)
+      margin-bottom: 15px
+  &-list
+    display: flex
+    overflow: auto
+    +media-breakpoint-down(md)
+      flex-wrap: wrap
+    +media-breakpoint-down(sm)
+      flex-wrap: nowrap
+  &-item
+    max-width: 147px
+    margin-right: 6px
+    max-height: 80px
+    +media-breakpoint-down(md)
+      max-width: 128px
+      margin-right: 9px
+      margin-bottom: 9px
+    +media-breakpoint-down(sm)
+      flex: 0 0 110px
+      max-width: 100%
+      margin-right: 6px
+      margin-bottom: 0
+    &:last-child
+      margin-right: 0
+    img
+      max-width: 100%
+      height: auto
+      object-fit: cover
+
+// social-list
+.social-list
+  margin: 0
+  padding: 0
+  list-style: none
+  display: flex
+  align-items: center
+  li
+    margin-right: 20px
+    +media-breakpoint-down(lg)
+      margin-right: 15px
+    &:last-child
+      margin-right: 0
+    a
+      display: block
+      width: 54px
+      height: 54px
+      border: 1px solid $grey2
+      border-radius: 50%
+      line-height: 52px
+      text-align: center
+      transition: $trs
+      +media-breakpoint-down(lg)
+        width: 50px
+        height: 50px
+        line-height: 47px
+      svg
+        fill: $grey2
+      &:hover
+        background: $green
+        border-color: $green
+        svg
+          fill: $white
+// payments
+.payments
+  position: relative
+  &-title
+    color: $grey
+    font-size: 16px
+    line-height: 24px
+    text-align: right
+    +media-breakpoint-down(lg)
+      font-size: 15px
+      line-height: 22px
+    +media-breakpoint-down(sm)
+      text-align: left
+      color: $white
+      margin-bottom: 15px
+  &-list
+    display: flex
+    align-items: center
+    +media-breakpoint-down(sm)
+      flex-wrap: wrap
+  &-item
+    max-width: 80px
+    margin-right: 20px
+    +media-breakpoint-down(sm)
+      margin-right: 15px
+      margin-bottom: 10px
+    &:last-child
+      margin-right: 0
+    img
+      max-width: 100%
+      height: auto
+// copyright
+.copyright
+  &__text
+    margin: 0
+    color: $grey
+    font-weight: 700
+    font-size: 16px
+    line-height: 19px
+    +media-breakpoint-down(lg)
+      font-size: 14px
+      line-height: 17px
