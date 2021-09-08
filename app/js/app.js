@@ -2,10 +2,12 @@
 window.jQuery = $;
 window.$ = $; // import module example (npm i -D jquery)*/
 import Headhesive from "headhesive";
-import Swiper from "swiper";
+import Swiper, { Autoplay, Pagination, Navigation } from "swiper";
 import { scrollspy } from "bootstrap";
 import Popper from "popper.js";
 import mPageScroll2id from "page-scroll-to-id";
+
+Swiper.use([Autoplay, Pagination, Navigation]);
 
 document.addEventListener("DOMContentLoaded", () => {
   // Hamburger Menu
@@ -57,6 +59,37 @@ document.addEventListener("DOMContentLoaded", () => {
       ? (cartHeaderItem.innerHTML = "Back")
       : (cartHeaderItem.innerHTML = "Back to menu");
   });
+
+  /** Banner Slider */
+  const banneSlider = new Swiper(".banner-slider", {
+    speed: 1000,
+    slidesPerView: "auto",
+    spaceBetween: 10,
+    centeredSlides: true,
+    loop: true,
+    /*autoplay: {
+      delay: 3000,
+      disableOnInteraction: true,
+    },*/
+    navigation: {
+      nextEl: ".banner-slider__next",
+      prevEl: ".banner-slider__prev",
+    },
+    pagination: {
+      el: ".banner-slider__pagination",
+    },
+    breakpoints: {
+      1200: {
+        slidesPerView: "auto",
+        spaceBetween: 30,
+        loop: true,
+      },
+      767: {
+        spaceBetween: 15,
+      },
+    },
+  });
+  /** END Banner Slider */
 
   /* JQUERY FUNCTIONS !!!!!!!!! */
 
