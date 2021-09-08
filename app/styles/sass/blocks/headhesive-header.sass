@@ -26,6 +26,8 @@
           margin-right: 10px
         +media-breakpoint-down(sm)
           margin-right: 9px
+      .cart-block
+
     &.cart-header
       .header-top
         display: block
@@ -45,7 +47,15 @@
       .container
         +media-breakpoint-down(md)
           position: relative
+      .cart-block.active
+        .popup-cart
+          opacity: 1
+          visibility: visible
   &.headhesive--unstick
     .main-nav__item.active .sub-menu
       opacity: 0
       visibility: hidden
+    .cart-block
+      .popup-cart
+        opacity: 0
+        visibility: hidden

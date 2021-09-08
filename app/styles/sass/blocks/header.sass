@@ -266,6 +266,13 @@
     padding-right: calc(100% - 300px)!important
   +media-breakpoint-down(xs)
     padding-right: calc(100% - 100px)!important
+  &::-webkit-scrollbar
+    height: 2px
+  &::-webkit-scrollbar-track
+    background: $white
+  &::-webkit-scrollbar-thumb
+    background: $grey3
+    border-radius: 2px
   &__wrapper
     position: relative
     font-size: 0

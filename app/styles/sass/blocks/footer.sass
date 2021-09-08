@@ -123,6 +123,13 @@
       flex-wrap: wrap
     +media-breakpoint-down(sm)
       flex-wrap: nowrap
+    &::-webkit-scrollbar
+      height: 5px
+    &::-webkit-scrollbar-track
+      background: $white
+    &::-webkit-scrollbar-thumb
+      background: $grey3
+      border-radius: 2px
   &-item
     max-width: 147px
     margin-right: 6px
@@ -162,7 +169,7 @@
       height: 54px
       border: 1px solid $grey2
       border-radius: 50%
-      line-height: 52px
+      line-height: 49px
       text-align: center
       transition: $trs
       +media-breakpoint-down(lg)

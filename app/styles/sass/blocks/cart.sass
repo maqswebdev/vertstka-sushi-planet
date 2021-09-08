@@ -8,8 +8,13 @@
     color: $black
     text-decoration: none
   &-block
+    position: relative
     display: flex
     align-items: center
+    &.active
+      .popup-cart
+        opacity: 1
+        visibility: visible
   &__icon
     width: 42px
     height: 42px
@@ -36,6 +41,9 @@
     +media-breakpoint-down(lg)
       font-size: 13px
       line-height: 18px
+  // cart link (at header)
+  &.link
+
   // cart content
   &-content
     position: relative
@@ -287,17 +295,118 @@
 
 // popup cart
 .popup-cart
-  display: none
   position: absolute
-  bottom: 0
-  left: 0
-  width: 100%
+  top: 110%
+  right: 0
+  width: 360px
   height: auto
   background: $white
   box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.12)
-  padding: 25px
-  max-width: 360px
+  padding: 17px 5px 25px 25px
   border-radius: 20px
+  opacity: 0
+  visibility: hidden
+  transition: $trs
+  +media-breakpoint-down(md)
+    display: none
+  &.active
+    opacity: 1
+    visibility: visible
+  &__foot
+    text-align: right
+    margin-top: 10px
+    padding-right: 12px
+    .checkout
+      padding: 11px 33px !important
+      max-width: 140px
+  &::after
+    content: ""
+    position: absolute
+    top: -8px
+    right: 78px
+    width: 24px
+    height: 24px
+    background: $white
+    transform: rotate(45deg)
+  .cart-items
+    padding-bottom: 0
+    padding-right: 12px
+    margin-top: 0
+    max-height: 378px
+    overflow-y: scroll
+    overflow-x: hidden
+    &::-webkit-scrollbar
+      width: 8px
+    &::-webkit-scrollbar-track
+      background: $white
+    &::-webkit-scrollbar-thumb
+      background: $grey4
+      border-radius: 10px
+  .cart-item
+    padding: 7px 0 20px
+    box-shadow: none
+    border-bottom: 1px solid $grey4
+    border-radius: 0
+    flex-direction: column
+    align-items: flex-start
+    margin-bottom: 0
+    &:first-child
+      padding-top: 0
+    &__left
+      flex: 1
+      width: 100%
+    &__right
+      width: 100%
+      justify-content: space-between
+      padding-left: 115px
+      margin-top: -7px
+    &__img
+      flex: 0 0 100px
+      margin-right: 15px
+    &__properties
+      .title
+        font-size: 15px
+        line-height: 18px
+      ul
+        li
+          font-size: 12px
+          line-height: 14px
+          color: $grey
+    &__remove
+      position: relative
+      top: -10px
+      width: 24px
+      height: 24px
+    &__counter
+      .counter-btn
+        width: 33px
+        height: 35px
+      .counter-value
+        width: 33px
+        height: 35px
+    &__price
+      flex: 1
+      margin: 0
+      align-items: flex-end
+  .total-price
+    display: flex
+    justify-content: space-between
+    width: 100%
+    height: 100%
+    margin: 20px 0 10px
+    padding-right: 12px
+    span
+      font-size: 16px
+      line-height: 19px
+      margin: 0
+      &:first-child
+        font-weight: 500
+  .warning
+    padding: 10px
+    margin: 0 12px 0 0
+    p
+      font-size: 14px
+      line-height: 17px
 
 .total-price
   font-size: 16px

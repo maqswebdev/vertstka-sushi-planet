@@ -73,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .addClass("active");
       $(this).find(".main-nav__link").removeClass("active");
     } else {
-      console.log("this");
       $(".header .main-nav__item")
         .not(".header.headhesive .main-nav__item")
         .removeClass("active")
@@ -83,6 +82,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   $(".sub-menu").on("mouseleave", function () {
     $(".main-nav__item").removeClass("active");
+  });
+
+  $(".header .cart.link").on("mouseenter", function () {
+    if ($currentHeader.hasClass("headhesive--stick")) {
+      $(".header.headhesive--stick .cart-block").addClass("active");
+    } else {
+      $(".header .cart-block")
+        .not(".header.headhesive .cart-block")
+        .addClass("active");
+    }
+  });
+
+  $(".header .cart-block .popup-cart").on("mouseleave", function () {
+    $(".header .cart-block").removeClass("active");
   });
 
   /* END JQUERY FUNCTIONS !!!!!!!!! */
