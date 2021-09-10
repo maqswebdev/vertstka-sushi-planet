@@ -10,6 +10,45 @@ import mPageScroll2id from "page-scroll-to-id";
 Swiper.use([Autoplay, Pagination, Navigation]);
 
 document.addEventListener("DOMContentLoaded", () => {
+  /** LazyLoad Images */
+  const $lazyImages = document.querySelectorAll("img[data-src]");
+  const windowHeight = document.documentElement.clientHeight;
+
+  let lazyImagesPositions = [];
+  if ($lazyImages.length) {
+    $lazyImages.forEach((lazyImg) => {
+      if (lazyImg.dataset.src) {
+        lazyImagesPositions.push(
+          lazyImg.getBoundingClientRect().top + pageYOffset
+        );
+        lazyScrollCheck();
+      }
+    });
+  }
+
+  window.addEventListener("scroll", lazyScroll);
+
+  function lazyScroll() {
+    if (document.querySelectorAll("img[data-src]").length > 0) {
+      lazyScrollCheck();
+    }
+  }
+
+  function lazyScrollCheck() {
+    let imgIndex = lazyImagesPositions.findIndex(
+      (imgItem) => pageYOffset > imgItem - windowHeight
+    );
+    if (imgIndex >= 0) {
+      if ($lazyImages[imgIndex].dataset.src) {
+        $lazyImages[imgIndex].src = $lazyImages[imgIndex].dataset.src;
+        $lazyImages[imgIndex].removeAttribute("data-src");
+        $lazyImages[imgIndex].parentElement.classList.remove("loading");
+      }
+      delete lazyImagesPositions[imgIndex];
+    }
+  }
+  /** End LazyLoad Images */
+
   // Hamburger Menu
   setTimeout(() => {
     const $hamburgerBtns = document.querySelectorAll(".hamburger");

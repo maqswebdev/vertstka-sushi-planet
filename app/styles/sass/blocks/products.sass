@@ -74,11 +74,13 @@
       &::after
         background-image: url(/images/dist/icons/hot.svg)
     &__img
+      position: relative
       width: 326px
       height: 230px
       display: flex
       align-items: center
       justify-content: center
+      transition: $trs
       +media-breakpoint-down(lg)
         max-width: 100%
         width: 100%
@@ -86,6 +88,20 @@
       +media-breakpoint-down(md)
         width: 120px
         height: 84px
+      &.loading
+        &::after
+          content: ""
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          background-image: url(/images/dist/loading.gif)
+          background-repeat: no-repeat
+          background-position: center center
+          z-index: 1
+          background-color: $white
+          transition: $trs
       img
         max-width: 100%
         height: 100%
