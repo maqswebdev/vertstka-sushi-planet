@@ -3,8 +3,8 @@ window.jQuery = $;
 window.$ = $; // import module example (npm i -D jquery)*/
 import Headhesive from "headhesive";
 import Swiper, { Autoplay, Pagination, Navigation } from "swiper";
-import { scrollspy } from "bootstrap";
 import Popper from "popper.js";
+import { ScrollSpy } from "bootstrap";
 import mPageScroll2id from "page-scroll-to-id";
 
 Swiper.use([Autoplay, Pagination, Navigation]);
@@ -67,10 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
     spaceBetween: 10,
     centeredSlides: true,
     loop: true,
-    /*autoplay: {
+    autoplay: {
       delay: 3000,
-      disableOnInteraction: true,
-    },*/
+      disableOnInteraction: false,
+    },
     navigation: {
       nextEl: ".banner-slider__next",
       prevEl: ".banner-slider__prev",
@@ -94,7 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
   /* JQUERY FUNCTIONS !!!!!!!!! */
 
   /** ПЛАВНЫЙ СКРОЛЛ */
-  $("a.nav-link").mPageScroll2id();
+  $("a.nav-link").mPageScroll2id({
+    offset: 100,
+    scrollSpeed: 700,
+  });
   /** END ПЛАВНЫЙ СКРОЛЛ */
 
   const $currentHeader = $(".header");
