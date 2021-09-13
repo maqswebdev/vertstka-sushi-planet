@@ -42,7 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if ($lazyImages[imgIndex].dataset.src) {
         $lazyImages[imgIndex].src = $lazyImages[imgIndex].dataset.src;
         $lazyImages[imgIndex].removeAttribute("data-src");
-        $lazyImages[imgIndex].parentElement.classList.remove("loading");
+        setTimeout(() => {
+          $lazyImages[imgIndex].parentElement.classList.remove("loading");
+        }, 500);
       }
       delete lazyImagesPositions[imgIndex];
     }
