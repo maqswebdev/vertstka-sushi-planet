@@ -7,9 +7,13 @@ import Popper from "popper.js";
 import { ScrollSpy } from "bootstrap";
 import mPageScroll2id from "page-scroll-to-id";
 
+require("~/app/js/vendor/cookie-message-master/cookie-message.js");
+
 Swiper.use([Autoplay, Pagination, Navigation]);
 
 document.addEventListener("DOMContentLoaded", () => {
+  document.body.className = document.body.className + " js_enabled";
+
   /** LazyLoad Images */
   const $lazyImages = document.querySelectorAll("img[data-src]");
   const windowHeight = document.documentElement.clientHeight;
@@ -131,6 +135,13 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
   /** END Banner Slider */
+
+  const $cookieCloseBtn = document.querySelector(".cookie-message__close");
+  if ($cookieCloseBtn) {
+    $cookieCloseBtn.addEventListener("click", function () {
+      this.parentElement.style.display = "none";
+    });
+  }
 
   /* JQUERY FUNCTIONS !!!!!!!!! */
 

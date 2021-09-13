@@ -468,3 +468,36 @@ h5.title
   &__description
     font-size: 14px
     line-height: 21px
+
+// cookie-message
+.cookie-message
+  position: fixed
+  bottom: 30px
+  left: 50%
+  width: 90%
+  height: auto
+  transform: translateX(-50%)
+  background: $white
+  z-index: 11
+  max-width: 1070px
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1)
+  border-radius: 4px
+  text-align: center
+  padding: 10px
+  +media-breakpoint-down(lg)
+    padding: 10px 50px
+  +media-breakpoint-down(sm)
+    width: 92%
+  p
+    font-size: 14px
+    line-height: 21px
+    font-family: "Gilroy", sans-serif
+    margin: 0
+    a
+      color: $red
+  &__close
+    position: absolute
+    right: 10px
+    top: 50%
+    transform: translateY(-50%)
+    cursor: pointer
