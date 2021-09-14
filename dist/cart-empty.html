@@ -162,7 +162,7 @@
 							<a href="#" class="main-nav__link">About Us</a>
 						</li>
 					</ul>
-					<!-- MOBILE MENU -->
+
 					<nav class="nav mobile-menu main-nav">
 						<a href="#sushi-1-1" class="nav-link mobile-menu__item">Nigiri</a>
 						<a href="#sushi-1-2" class="nav-link mobile-menu__item">Gunkan</a>
@@ -172,7 +172,7 @@
 						<a href="#sushi-1-6" class="nav-link mobile-menu__item">Hot Maki</a>
 						<a href="#sushi-1-7" class="nav-link mobile-menu__item">Tempura Maki</a>
 					</nav>
-					<!-- END MOBILE MENU -->
+
 				</div>
 				<div class="cart-block">
 					<a href="#" class="cart link">
@@ -522,8 +522,46 @@
   </div>
 </footer>
 
+<div class="cookie-message" id="cookie-message" data-cookie-expiry="60">
+  <p>
+    We use cookies to make the website work quickly and conveniently. By continuing to use the site, you accept the
+    <a href="#">terms of personal data processing</a>
+  </p>
+  <div class="cookie-message__close">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M15.2458 5.92913C15.5703 5.60466 15.5703 5.07859 15.2458 4.75413C14.9213 4.42966 14.3953 4.42966 14.0708 4.75413L9.99996 8.82496L5.92913 4.75413C5.60466 4.42966 5.07859 4.42966 4.75413 4.75413C4.42966 5.07859 4.42966 5.60466 4.75413 5.92913L8.82496 9.99996L4.75413 14.0708C4.42966 14.3953 4.42966 14.9213 4.75413 15.2458C5.07859 15.5703 5.60466 15.5703 5.92913 15.2458L9.99996 11.175L14.0708 15.2458C14.3953 15.5703 14.9213 15.5703 15.2458 15.2458C15.5703 14.9213 15.5703 14.3953 15.2458 14.0708L11.175 9.99996L15.2458 5.92913Z"
+        fill="#9E9E9E" />
+    </svg>
+  </div>
+</div>
+
+
+<div id="hours" class="popup-window popup-hours">
+  <a href="#" class="popup-window__close" rel="modal:close" onclick="event.preventDefault()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M18.295 7.115C18.6844 6.72564 18.6844 6.09436 18.295 5.705C17.9056 5.31564 17.2744 5.31564 16.885 5.705L12 10.59L7.115 5.705C6.72564 5.31564 6.09436 5.31564 5.705 5.705C5.31564 6.09436 5.31564 6.72564 5.705 7.115L10.59 12L5.705 16.885C5.31564 17.2744 5.31564 17.9056 5.705 18.295C6.09436 18.6844 6.72564 18.6844 7.115 18.295L12 13.41L16.885 18.295C17.2744 18.6844 17.9056 18.6844 18.295 18.295C18.6844 17.9056 18.6844 17.2744 18.295 16.885L13.41 12L18.295 7.115Z"
+        fill="#9E9E9E" />
+    </svg>
+  </a>
+  <div class="popup-hours__img">
+    <img data-src="images/dist/popup-hours-img.png" src="images/dist/img-placehold.png" alt="alt" />
+  </div>
+  <h4 class="popup-hours__title">
+    <span class="label">Opening Hours</span>
+    <span>Thu: 16:30 - 21:00,</span>
+    <span>Fri-Sun: 12:30 - 21:00</span>
+  </h4>
+  <div class="popup-hours__description">
+    Orders accepted every day
+  </div>
+  <a href="#" class="btn green popup-hours__closeBtn" rel="modal:close" onclick="event.preventDefault()">Okay</a>
+</div>
+
 
 <script src="js/vendor/jquery/jquery.min.js"></script>
+<script src="js/vendor/jquery-modal/jquery.modal.min.js"></script>
 <script src="js/app.min.js"></script>
 
 </body>
