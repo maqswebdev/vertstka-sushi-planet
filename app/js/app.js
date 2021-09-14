@@ -14,6 +14,18 @@ Swiper.use([Autoplay, Pagination, Navigation]);
 document.addEventListener("DOMContentLoaded", () => {
   document.body.className = document.body.className + " js_enabled";
 
+  /** init popup modals */
+  /*$("a[data-modal]").click(function (event) {
+    $(this).modal();
+    return false;
+  });*/
+  setTimeout(() => {
+    $("#hours").modal({
+      showClose: false,
+      fadeDuration: 200,
+    });
+  }, 3000);
+
   /** LazyLoad Images */
   const $lazyImages = document.querySelectorAll("img[data-src]");
   const windowHeight = document.documentElement.clientHeight;
