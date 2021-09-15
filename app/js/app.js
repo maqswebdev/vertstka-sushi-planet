@@ -15,16 +15,25 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.className = document.body.className + " js_enabled";
 
   /** init popup modals */
-  /*$("a[data-modal]").click(function (event) {
-    $(this).modal();
-    return false;
-  });*/
-  setTimeout(() => {
-    $("#hours").modal({
+  const hoursPopupSession = sessionStorage.getItem("sushiplanethourspopup");
+  if (!hoursPopupSession) {
+    setTimeout(() => {
+      $("#hours").modal({
+        showClose: false,
+        fadeDuration: 200,
+      });
+    }, 3000);
+    sessionStorage.setItem("sushiplanethourspopup", true);
+  }
+
+  $("a[data-modal]").click(function (event) {
+    $(this).modal({
       showClose: false,
-      fadeDuration: 200,
+      fadeDuration: 100,
     });
-  }, 3000);
+    return false;
+  });
+  /** end init popup modals */
 
   /** LazyLoad Images */
   const $lazyImages = document.querySelectorAll("img[data-src]");

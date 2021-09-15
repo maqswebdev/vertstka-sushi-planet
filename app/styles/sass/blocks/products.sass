@@ -73,6 +73,8 @@
     &.hot
       &::after
         background-image: url(/images/dist/icons/hot.svg)
+    &:hover
+      text-decoration: none
     &__img
       position: relative
       width: 326px
@@ -168,6 +170,7 @@
       line-height: 24px
       font-weight: 600
       flex: 0 0 80px
+      color: $black
       +media-breakpoint-down(lg)
         flex: 0 0 110px
       +media-breakpoint-down(md)

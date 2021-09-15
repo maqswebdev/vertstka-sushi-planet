@@ -3,10 +3,12 @@
   margin: 0 auto
   position: relative
   display: none
+  box-shadow: none
+  border-radius: 20px 0px
   +media-breakpoint-down(md)
     max-width: 100% !important
     width: 100%
-    height: 100vh
+    height: 100%
     border-radius: 0 !important
   &__close
     position: absolute
@@ -25,6 +27,7 @@
       right: 10%
       width: 30px
       height: 30px
+      background: transparent
     +media-breakpoint-down(sm)
       right: 15px
       top: 15px
@@ -36,7 +39,6 @@
 // popup-hours
 .popup-hours
   max-width: 412px
-  border-radius: 20px 0px
   padding: 23px 54px 40px
   text-align: center
   +media-breakpoint-down(md)
@@ -81,8 +83,162 @@
     +media-breakpoint-down(sm)
       max-width: 100%
 
+// popup-product
+.popup-product
+  max-width: 900px
+  padding: 0
+  .popup-window__close
+    +media-breakpoint-down(sm)
+      width: 50px
+      height: 50px
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25)
+      background: $white
+  &__wrap
+    display: flex
+    +media-breakpoint-down(md)
+      flex-direction: column
+    .products-item__options
+      margin-top: 67px
+      +media-breakpoint-down(md)
+        margin-top: 0
+        position: fixed
+        bottom: 0
+        left: 0
+        width: 100%
+        height: auto
+        background: $white
+        padding: 15px 0
+      +media-breakpoint-down(sm)
+        padding: 15px
+      .products-item__option
+        +media-breakpoint-down(md)
+          width: 434px
+          margin: 0 auto 14px
+        +media-breakpoint-down(sm)
+          width: 100%
+          margin: 0 0 14px 0
+        &__left
+          +media-breakpoint-down(md)
+            flex-direction: row
+            align-items: center
+          +media-breakpoint-down(sm)
+            flex-direction: column
+            align-items: flex-start
+        &:last-child
+          margin-bottom: 0
+      .products-item__price
+        +media-breakpoint-down(md)
+          flex: 0 0 70px
+          margin: 0
+        +media-breakpoint-down(sm)
+          flex: 1
+      .products-item__btn
+        +media-breakpoint-down(md)
+          max-width: 240px
+      .products-item__counter
+        .counter-btn
+          +media-breakpoint-down(md)
+            width: 80px
+        .counter-value
+          +media-breakpoint-down(md)
+            width: 80px
+  &__left
+    flex: 0 0 500px
+    display: flex
+    align-items: center
+    justify-content: center
+    background: $grey6
+    +media-breakpoint-down(lg)
+      flex: 0 0 55%
+    +media-breakpoint-down(sm)
+      padding: 0 15px
+      flex: 0 0 100%
+      background: transparent
+  &__right
+    flex: 0 0 400px
+    padding: 40px 30px 25px 30px
+    background: $white
+    +media-breakpoint-down(lg)
+      flex: 0 0 45%
+    +media-breakpoint-down(md)
+      flex: 0 0 100%
+      max-width: 434px
+      margin: 0 auto
+      padding: 20px 0 200px 0
+    +media-breakpoint-down(sm)
+      padding: 5px 15px 200px 15px
+      max-width: 100%
+      margin: 0
+  &__img
+    width: 380px
+    height: 268px
+    +media-breakpoint-down(md)
+      width: 356px
+      height: 251px
+    +media-breakpoint-down(sm)
+      width: 100%
+      height: 100%
+    img
+      max-width: 100%
+      height: auto
+  &__title
+    font-size: 24px
+    line-height: 29px
+    margin-bottom: 15px
+    font-weight: 500
+    +media-breakpoint-down(lg)
+      margin-bottom: 10px
+  &__postTitle
+    display: block
+    font-size: 15px
+    line-height: 22px
+    color: $grey
+    +media-breakpoint-down(lg)
+      font-size: 14px
+      line-height: 21px
+  &__description
+    font-size: 15px
+    color: $grey
+    margin: 25px 0
+    +media-breakpoint-down(lg)
+      font-size: 14px
+    b,
+    strong,
+    .bold
+      color: $black
+
+// contains
+.contains
+  &-list
+    display: flex
+    flex-wrap: wrap
+  &__title
+    font-size: 15px
+    line-height: 22px
+    font-weight: 500
+    margin-bottom: 10px
+    +media-breakpoint-down(lg)
+      font-size: 14px
+      line-height: 21px
+  &-item
+    margin-right: 10px
+    text-align: center
+    margin-bottom: 10px
+    &__icon
+      width: 34px
+      height: 34px
+      background-color: #F2AE49
+      border-radius: 50%
+      text-align: center
+      line-height: 32px
+    &__label
+      font-size: 12px
+      line-height: 14px
+      margin-top: 4px
+
 .blocker
   padding: 70px 20px
   z-index: 1001
+  background-color: rgba(0,0,0,.5)
   +media-breakpoint-down(md)
     padding: 0
