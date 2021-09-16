@@ -16,6 +16,7 @@
         opacity: 1
         visibility: visible
   &__icon
+    position: relative
     width: 42px
     height: 42px
     background: $green
@@ -428,3 +429,62 @@
     +media-breakpoint-down(sm)
       font-size: 18px
       line-height: 28px
+
+// flying-cart
+.flying-cart
+  display: none
+  position: fixed
+  bottom: 15px
+  left: 0
+  width: 100%
+  height: auto
+  z-index: 11
+  +media-breakpoint-down(md)
+    display: block
+  .cart__icon
+    width: 58px
+    height: 58px
+    line-height: 56px
+    margin-left: auto
+    filter: drop-shadow(0px 2px 12px rgba(0, 0, 0, 0.3))
+  &__total
+    position: absolute
+    right: -1px
+    top: -1px
+    width: 22px
+    height: 22px
+    background: $white
+    border-radius: 50%
+    color: $red
+    font-size: 14px
+    font-weight: 500
+    line-height: 21px
+    text-align: center
+    border: 1px solid $green
+
+// flying-message
+.flying-message
+  position: fixed
+  bottom: 15px
+  left: 0
+  display: none
+  width: 100%
+  height: auto
+  z-index: 111
+  +media-breakpoint-down(md)
+    display: block
+  &.on
+    display: none
+    +media-breakpoint-down(md)
+      display: block
+  &-item
+    background: rgba($black, .75)
+    font-size: 14px
+    line-height: 17px
+    color: $white
+    padding: 6px 10px
+    border-radius: 8px
+    width: calc(100% - 78px)
+    margin-bottom: 10px
+    &:last-child
+      margin-bottom: 0
