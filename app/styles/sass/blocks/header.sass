@@ -63,9 +63,12 @@
       max-width: 120px
 // logotype-icon
 .logotype-icon
+  position: relative
+  z-index: 2
   display: flex
   align-items: center
   transition: $trs
+  background: $white
   img
     max-width: 46px
     height: auto
@@ -261,17 +264,23 @@
   display: none
   overflow: auto
   white-space: nowrap
-  padding-right: calc(100% - 500px)!important
+  padding-bottom: 5px
+  padding-top: 20px
+  //padding-right: calc(100% - 500px)!important
+  +media-breakpoint-down(md)
+    display: block
   +media-breakpoint-down(sm)
-    padding-right: calc(100% - 300px)!important
+    //padding-right: calc(100% - 300px)!important
   +media-breakpoint-down(xs)
-    padding-right: calc(100% - 100px)!important
+    padding-top: 15px
+    //padding-right: calc(100% - 100px)!important
   &::-webkit-scrollbar
-    height: 2px
+    //height: 2px
+    height: 0
   &::-webkit-scrollbar-track
-    background: $white
+    //background: $white
   &::-webkit-scrollbar-thumb
-    background: $grey3
+    //background: $grey3
     border-radius: 2px
   &__wrapper
     position: relative
@@ -291,6 +300,8 @@
     margin: 0 5px 0 0
     +media-breakpoint-down(sm)
       font-size: 14px
+    +media-breakpoint-down(xs)
+      margin: 0 4px 0 0
     &:hover
       text-decoration: none
       color: $grey
