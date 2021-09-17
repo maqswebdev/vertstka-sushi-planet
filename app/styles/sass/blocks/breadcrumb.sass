@@ -1,0 +1,30 @@
+.breadcrumb
+  position: relative
+  padding-top: 20px
+  +media-breakpoint-down(md)
+    display: none
+  ol
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    li
+      position: relative
+      font-size: 14px
+      line-height: 17px
+      padding: 0 13px 0 10px
+      &:last-child
+        padding-right: 0
+        &::after
+          display: none
+      &:first-child
+        padding-left: 0
+      &::after
+        content: "/"
+        position: absolute
+        right: 0
+        top: 0
+      a
+        color: $black
+      &.active
+        color: $grey2
