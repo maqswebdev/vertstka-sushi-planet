@@ -66,6 +66,11 @@ input, textarea
 		border-color: red
 	&:required:valid
 		border-color: green
+input
+	&:disabled
+		background: $grey5
+		&::placeholder
+			color: $grey2
 
 body
 	font-family: $userfont

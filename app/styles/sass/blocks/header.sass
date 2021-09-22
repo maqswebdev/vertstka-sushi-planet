@@ -1,6 +1,10 @@
 .header
   position: relative
   background: $white
+  &.default
+    .header-bottom
+      +media-breakpoint-down(md)
+        display: none !important
   &-top
     padding: 10px 0
     position: relative
