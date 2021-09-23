@@ -207,6 +207,34 @@
     .bold
       color: $black
 
+// popup-login
+.popup-login
+  max-width: 412px
+  padding: 40px
+  text-align: center
+  +media-breakpoint-down(md)
+    padding-top: 120px
+  +media-breakpoint-down(sm)
+    padding: 120px 15px 40px 15px
+  &__content
+    +media-breakpoint-down(md)
+      max-width: 376px
+      margin: 0 auto
+    +media-breakpoint-down(xs)
+      max-width: 100%
+  &__title
+    text-align: center
+    margin-bottom: 20px !important
+    +media-breakpoint-down(md)
+      margin-bottom: 10px !important
+  &__description
+    color: $grey
+    margin-bottom: 30px !important
+    +media-breakpoint-down(md)
+      margin-bottom: 25px !important
+  .form__message
+    margin-bottom: 0
+
 // contains
 .contains
   &-list

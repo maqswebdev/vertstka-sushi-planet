@@ -1,0 +1,50 @@
+.form
+  position: relative
+  &__row
+    margin-bottom: 20px
+    +media-breakpoint-down(md)
+      margin-bottom: 15px
+    &:last-child
+      margin-bottom: 0
+  label
+    display: block
+    font-size: 14px
+    line-height: 17px
+    margin-bottom: 8px
+    font-weight: 500
+    text-align: left
+  input
+    border: 1px solid $grey4
+    border-radius: 6px
+    padding: 10px 16px
+    font-size: 16px
+    line-height: 24px
+    width: 100%
+  &__message
+    color: $grey2
+    text-align: center
+    line-height: 24px
+    margin: 20px 0
+    +media-breakpoint-down(md)
+      font-size: 14px
+      line-height: 21px
+  &__btn
+    margin-top: 30px
+    max-width: 250px
+    +media-breakpoint-down(md)
+      margin-top: 20px
+      max-width: 100%
+  &__input
+    position: relative
+  &__icon
+    position: absolute
+    top: 50%
+    right: 16px
+    transform: translateY(-50%)
+    line-height: 24px
+    color: $grey
+    cursor: pointer
+    svg
+      position: relative
+      top: -1px
+      margin-right: 3px
