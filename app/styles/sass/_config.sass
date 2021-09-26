@@ -69,6 +69,9 @@ input, textarea
 input
 	&:disabled
 		background: $grey5
+		border-color: $grey5 !important
+		+media-breakpoint-down(xs)
+			padding-right: 75px !important
 		&::placeholder
 			color: $grey2
 

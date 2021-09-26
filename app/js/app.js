@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       $("#hours").modal({
         showClose: false,
-        fadeDuration: 200,
+        fadeDuration: 300,
       });
     }, 3000);
     sessionStorage.setItem("sushiplanethourspopup", true);
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $("a[data-modal]").click(function (event) {
     $(this).modal({
       showClose: false,
-      fadeDuration: 100,
+      fadeDuration: 300,
     });
     return false;
   });
@@ -117,9 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  const $cartHeaderBackBtn = document.querySelectorAll(
-    ".cart-header .back-btn span"
-  );
+  const $cartHeaderBackBtn = document.querySelectorAll(".back-btn span");
   $cartHeaderBackBtn.forEach((cartHeaderItem) => {
     window.innerWidth <= 1200
       ? (cartHeaderItem.innerHTML = "Back")

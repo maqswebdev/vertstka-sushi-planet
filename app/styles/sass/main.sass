@@ -132,7 +132,7 @@ h3.title
   +media-breakpoint-down(lg)
     font-size: 18px
     line-height: 22px
-  +media-breakpoint-down(sm)
+  +media-breakpoint-down(md)
     font-size: 16px
     line-height: 19px
 h4.title
@@ -170,6 +170,7 @@ h5.title
   display: flex
   align-items: center
   margin: 30px 0
+  font-weight: 500
   +media-breakpoint-down(lg)
     font-size: 14px
     padding: 17px 0 16px
@@ -179,6 +180,9 @@ h5.title
     flex-direction: column
     align-items: flex-start
     padding: 10px
+  .icon
+    position: relative
+    top: -1px
   &.danger
     background: $red
     color: $white
@@ -196,6 +200,13 @@ h5.title
       margin-right: 8px
       svg
         fill: $black
+  &.white
+    background: $white
+    color: $red
+    .icon
+      margin-right: 9px
+      svg
+        fill: $red
   &.center
     text-align: center
     +media-breakpoint-down(sm)
@@ -205,6 +216,8 @@ h5.title
     line-height: 22px
     +media-breakpoint-down(lg)
       line-height: 21px
+    +media-breakpoint-down(md)
+      font-size: 14px
     +media-breakpoint-down(sm)
       font-size: 14px
       line-height: 21px
@@ -316,9 +329,34 @@ h5.title
       +media-breakpoint-down(xs)
         max-width: 186px
     .btn
-      width: 125px
+      flex: 0 0 125px
       +media-breakpoint-down(xs)
         max-width: 120px
+        flex: unset
+  &-result
+    margin: 12px 0
+    display: flex
+    align-items: center
+    &.error
+      .promocode-result__label
+        color: $red
+    &__icon
+      margin-right: 8px
+      margin-top: -2px
+    &__label
+      font-size: 14px
+      line-height: 21px
+      color: $green
+      font-weight: 500
+  &-item
+    &__title
+      font-size: 16px
+      line-height: 19px
+      margin-bottom: 5px
+    &__description
+      font-size: 14px
+      line-height: 21px
+      color: $grey
 
 // back-btn
 .back-btn
@@ -658,3 +696,13 @@ h5.title
       font-weight: 700
       +media-breakpoint-down(md)
         margin-bottom: 8px
+
+// .childs-padding
+.childs-padding > div
+  padding: 30px 0
+  +media-breakpoint-down(md)
+    padding: 20px 0
+  &:first-child
+    padding-top: 0
+  &:last-child
+    padding-bottom: 0

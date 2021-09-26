@@ -253,12 +253,14 @@
       background: $white
       border-top: none
       padding: 14px 15px
+      z-index: 99
     .back-btn
       +media-breakpoint-down(sm)
         display: none
     .checkout
       +media-breakpoint-down(sm)
         max-width: 190px
+        padding: 12px 40px !important
     &__left
     &__right
       display: flex
@@ -292,7 +294,10 @@
       position: absolute
     .header-top
       .logotype
-        margin-left: 60px
+        +media-breakpoint-down(md)
+          margin-left: 75px
+        +media-breakpoint-down(sm)
+          margin-left: 60px
 
 // popup cart
 .popup-cart

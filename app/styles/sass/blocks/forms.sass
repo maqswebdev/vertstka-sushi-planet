@@ -2,10 +2,19 @@
   position: relative
   &__row
     margin-bottom: 20px
+    width: 100%
     +media-breakpoint-down(md)
       margin-bottom: 15px
     &:last-child
       margin-bottom: 0
+  &__column
+    flex: 0 0 50%
+    padding-right: 15px
+    &:last-child
+      padding-right: 0
+    +media-breakpoint-down(xs)
+      margin-bottom: 15px
+      padding-right: 0
   label
     display: block
     font-size: 14px
@@ -48,3 +57,123 @@
       position: relative
       top: -1px
       margin-right: 3px
+  &__cover
+    background: $white
+    padding: 30px 30px 40px 30px
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.06)
+    border-radius: 15px
+    +media-breakpoint-down(md)
+      //background: transparent
+      //padding: 30px 0 20px
+      padding: 20px
+      border-radius: 10px
+      //box-shadow: none
+    +media-breakpoint-down(sm)
+      padding: 20px 12px
+    &.grey
+      background: $grey5
+      box-shadow: none
+  &__radio
+    margin-bottom: 18px
+    &:last-child
+      margin-bottom: 0
+    &.white
+      label
+        &::before
+          background: $white
+    input
+      display: none
+      &:checked
+        & + label
+          &::before
+            border-color: $red
+          &::after
+            opacity: 1
+            visibility: visible
+    label
+      position: relative
+      padding-left: 30px
+      margin: 0
+      font-size: 16px
+      line-height: 19px
+      cursor: pointer
+      +media-breakpoint-down(sm)
+        font-size: 14px
+        line-height: 17px
+      &::before
+        content: ""
+        width: 20px
+        height: 20px
+        position: absolute
+        top: -1px
+        left: 0
+        border: 1px solid $grey3
+        border-radius: 50%
+        transition: $trs
+        +media-breakpoint-down(sm)
+          top: -2px
+      &::after
+        content: ""
+        position: absolute
+        top: 4px
+        left: 5px
+        width: 10px
+        height: 10px
+        border-radius: 50%
+        background: $red
+        opacity: 0
+        visibility: hidden
+        transition: $trs
+        +media-breakpoint-down(sm)
+          top: 3px
+      svg
+        position: relative
+        top: -2px
+  &__checkbox
+    input
+      display: none
+      &:checked
+        & + label
+          &::after
+            border-color: $red
+          &::before
+            opacity: 1
+            visibility: visible
+    &.white
+      label
+        &::after
+          background: $white
+    label
+      font-size: 16px
+      line-height: 24px
+      padding-left: 32px
+      position: relative
+      cursor: pointer
+      margin: 0
+      +media-breakpoint-down(sm)
+        font-size: 14px
+        line-height: 21px
+      &::after
+        content: ""
+        position: absolute
+        top: 2px
+        left: 0
+        width: 20px
+        height: 20px
+        border: 1px solid $grey3
+        border-radius: 2px
+        transition: $trs
+      &::before
+        content: ""
+        position: absolute
+        top: 7px
+        left: 4px
+        width: 12px
+        height: 9px
+        background-image: url(../images/dist/icons/done_red.svg)
+        background-size: cover
+        background-repeat: no-repeat
+        opacity: 0
+        visibility: hidden
+        transition: $trs
+        z-index: 2
