@@ -171,6 +171,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   /** END ПЛАВНЫЙ СКРОЛЛ */
 
+  /** Tabs */
+  $(".tab__item").not(":first").hide();
+  $(".tabs-wrapper .tab")
+    .click(function () {
+      $(".tabs-wrapper .tab")
+        .removeClass("active")
+        .eq($(this).index())
+        .addClass("active");
+      $(".tab__item").hide().eq($(this).index()).css("display", "block");
+    })
+    .eq(0)
+    .addClass("active");
+  /** End tabs */
+
   const $currentHeader = $(".header");
   $(".main-nav__item").on("mouseenter", function () {
     if ($currentHeader.hasClass("headhesive--stick")) {

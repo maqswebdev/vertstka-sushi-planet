@@ -258,9 +258,130 @@
           </div>
           <div class="cart-footer__right">
             <div class="total-price">Total: <span>€30,9</span></div>
-            <button type="button" class="btn green checkout">Сheckout</button>
+            <a href="#delivery" class="btn green checkout" data-modal>Сheckout</a>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="delivery" class="popup-window popup-delivery">
+    <a href="#" class="popup-window__close" rel="modal:close" onclick="event.preventDefault()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M18.295 7.115C18.6844 6.72564 18.6844 6.09436 18.295 5.705C17.9056 5.31564 17.2744 5.31564 16.885 5.705L12 10.59L7.115 5.705C6.72564 5.31564 6.09436 5.31564 5.705 5.705C5.31564 6.09436 5.31564 6.72564 5.705 7.115L10.59 12L5.705 16.885C5.31564 17.2744 5.31564 17.9056 5.705 18.295C6.09436 18.6844 6.72564 18.6844 7.115 18.295L12 13.41L16.885 18.295C17.2744 18.6844 17.9056 18.6844 18.295 18.295C18.6844 17.9056 18.6844 17.2744 18.295 16.885L13.41 12L18.295 7.115Z"
+          fill="#9E9E9E" />
+      </svg>
+    </a>
+    <h5 class="title">Delivery Address</h5>
+    <div class="tabs-wrapper">
+      <div class="tabs">
+        <span class="tab">Delivery</span>
+        <span class="tab">Pik-up</span>
+        <!--<span class="tab">Not delivery</span>-->
+      </div>
+      <div class="tab__content">
+        <div class="tab__item">
+          <form class="form form-delivery">
+            <div class="form__row">
+              <div class="form__radio">
+                <input type="radio" name="payment" id="address1">
+                <label for="address1">126A Cork St, The Liberties, D08 X3CF</label>
+              </div>
+              <div class="form__radio">
+                <input type="radio" name="payment" id="newAddress">
+                <label for="newAddress">Add new address</label>
+              </div>
+            </div>
+            <div class="form-delivery__inputs">
+              <div class="form__input">
+                <label for="street">Street*</label>
+                <input type="text" name="street" placeholder="Street" value="">
+              </div>
+              <div class="form__input">
+                <label for="House">House*</label>
+                <input type="text" name="House" placeholder="House" value="">
+              </div>
+              <div class="form__input">
+                <label for="eircode">Eircode*</label>
+                <input type="text" name="eircode" placeholder="Eircode" value="">
+              </div>
+              <div class="form__input">
+                <label for="Appartment">Appartment</label>
+                <input type="text" name="Appartment" placeholder="Appartment" value="">
+              </div>
+              <div class="form__input">
+                <label for="Entrance">Entrance</label>
+                <input type="text" name="Entrance" placeholder="Entrance" value="">
+              </div>
+              <div class="form__input">
+                <label for="Floor">Floor</label>
+                <input type="text" name="Floor" placeholder="Floor" value="">
+              </div>
+              <div class="form__input">
+                <label for="Doorcode">Door code</label>
+                <input type="text" name="Doorcode" placeholder="Door code" value="">
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__textarea">
+                <label for="comments">Comments</label>
+                <textarea name="comments" placeholder="Comments"></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn green form-delivery__submit">Сonfirm Address</button>
+          </form>
+        </div>
+        <div class="tab__item">
+          <form class="form form-delivery">
+            <div class="form__row">
+              <div class="form__radio">
+                <input type="radio" name="payment" id="address2">
+                <label for="address2">Ace Enterprise Park, Bawnogue Road, Clondalkin, D22 FX96</label>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__textarea">
+                <label for="comments">Comments</label>
+                <textarea name="comments" placeholder="Comments"></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn green form-delivery__submit">Choose</button>
+          </form>
+        </div>
+        <!--
+        <div class="tab__item">
+          <form class="form form-delivery">
+            <div class="form-delivery__inputs">
+              <div class="form__input">
+                <label for="street">Street*</label>
+                <input type="text" name="street" placeholder="Street" value="Адрес куда не доставляют" class="invalid">
+              </div>
+              <div class="form__input">
+                <label for="house">House*</label>
+                <input type="text" name="house" placeholder="House" value="2" class="invalid">
+              </div>
+              <div class="form__input">
+                <label for="eircode">Eircode*</label>
+                <input type="text" name="eircode" placeholder="Eircode" value="456 G131" class="invalid">
+              </div>
+            </div>
+            <div class="delivery-error">
+              <div class="delivery-error__text">
+                <span class="delivery-error__title">Oh! We do not deliver to your address yet.</span>
+                <p>
+                  Check out our aditional delivery service. Please contact us on <a href="tel:0894993339">0894993339</a>
+                  for more information
+                </p>
+                <a href="#" class="btn green delivery-error__btn">Learn more</a>
+              </div>
+              <div class="delivery-error__img">
+                <img src="images/dist/not-delivery.png" alt="alt">
+              </div>
+            </div>
+          </form>
+        </div>
+        -->
       </div>
     </div>
   </div>
